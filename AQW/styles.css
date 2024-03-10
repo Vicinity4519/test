@@ -1,0 +1,82 @@
+$animation-timing: 27s;
+$carousel-items: 9;
+$animation-delay-fraction: $animation-timing / $carousel-items;
+$animation-steps-fraction: 100 / $carousel-items;
+$slide-change-timing: 3; // percentage of total animation cycle
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #1e1e1e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.top-panel {
+  height: 65px;
+  background-color: #282828;
+  display: absolute;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.main-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+}
+
+.main-container2 {
+  flex-grow: 1;
+  background-color: #272727;
+  border-radius: 20px;
+padding: 8px;
+}
+
+.container {
+  display: flex;
+  padding: 50px;
+  background-color: rgba(23, 23, 23, 1.0);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  height: 60%;
+}
+
+.box {
+  width: 200px;
+  height: 280px;
+  margin: 20px;
+  background-color: #343434;
+  border-radius: 40px;
+
+}
+
+.box:hover {
+  width: 200px;
+  height: 280px;
+  margin: 20px;
+  background-color: #434343;
+  border-radius: 30px;
+  animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+
+
+        ::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:rgba(0,0,0,.3)}::-webkit-scrollbar-thumb{border-radius:3px;background:rgba(161, 161, 161, 0.7)}::-webkit-scrollbar-thumb:hover{background:rgba(139, 139, 139, 0.7)}a{text-decoration:none;color:rgb(0, 0, 0);-webkit-transition:all .3s ease 0s;-khtml-transition:all .3s ease 0s;-moz-transition:all .3s ease 0s;-ms-transition:all .3s ease 0s;-o-transition:all .3s ease 0s;transition:all .3s ease 0s}a:hover{cursor:pointer;color:#BF1111}.clear_fix{width:100%;float:left}.visible{visibility:visible!important}.hidden{display:none}.no_pointer:hover{cursor:default!important}}  

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd">
+<cross-domain-policy>
+  <!-- Allow any domain under aq.com -->
+  <allow-access-from domain="*.aq.com"/>
+  <!-- You can add more specific allow-access-from entries if needed -->
+  <!-- For example: <allow-access-from domain="specificsubdomain.aq.com"/> -->
+</cross-domain-policy>

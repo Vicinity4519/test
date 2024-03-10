@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>MPC Vault</title>
+  <!-- Add these links to include Bootstrap CSS and JS files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Add these links to include Slick Carousel CSS and JS files -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script src="https://kit.fontawesome.com/691a0f1e2f.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Extract the gamename from the URL's hash
+      let gamename = window.location.hash.substr(1); // Remove the '#' at the beginning
+          const gd1 = document.getElementById("gameData1");
+          const gd2 = document.getElementById("gameData2");
+          gd1.setAttribute("data", `./roms/${gamename}.swf`);
+          gd2.setAttribute("value", `./roms/${gamename}.swf`);
+      if (gamename) {
+        window.addEventListener("load", (event) => {
+
+          const ruffle = window.RufflePlayer.newest();
+          const player = ruffle.createPlayer();
+          const container = document.getElementById("mg_embed");
+
+          container.appendChild(player);
+
+          player.load(`./roms/${gamename}.swf`);
+        });
+      } else {
+        console.error("No gamename found in the URL hash.");
+      }
+    });
+
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.RufflePlayer.config = {
+      "width": 1150,
+      "height": 750,
+      "allowScriptAccess": true,
+      "allowSameOrigin": true,
+      "autoplay": "auto",
+      "wmode": "window",
+      "letterbox": "fullscreen",
+      "contextMenu": "off",
+      "showSwfDownload": false,
+      "parameters": {
+        "allowScriptAccess": "always",
+      }
+    };
+  </script>
+
+</head>
+<body style="background-image: url('./tiles.png');">
+  <center>
+    <div class="top-panel">
+      <!-- Add any content you want in the top panel here -->
+      <img src="./mpcv.png" style="height: 100%; width: auto;">
+      <img src="https://www.pokencyclopedia.info/sprites/gen5/ani_black-white/ani_bw_415_m.gif" onclick="openNewWindow('https://www.mediafire.com/file/r6glg05xfngd11q/MPC.7z/file');">
+      </img>
+    </div>
+  </center>
+  <p> </p>
+
+  <center>
+    <div class="main-container2" style="width: 75%;">
+      <p> </p>
+      <div class="main-container container">
+        <div id="carousel1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="mg_embed">
+                <object  classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gameData1" type="application/x-shockwave-flash" data="http://localhost:5588/proxy?url=https://game.aq.com/game/gamefiles/Loader3.swf?ver=a" width="1250" height="750" loop="false" 
+                    pluginspage="https://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" 
+                    type="application/x-shockwave-flash" scale="exactfit" allowscriptaccess="always" allowFullScreen="true" 
+                    menu="false" flashvars="&sLang=en&isweb=true">
+                  <param id="gameData2" name="movie" value="http://localhost:5588/proxy?url=https://game.aq.com/game/gamefiles/Loader3.swf?ver=a" />
+                  <param name="quality" value="high"/>
+				  <param name="LOOP" value="false" />
+                <param name="SCALE" value="exactfit" />
+                <param name="allowScriptAccess" value="always" />
+                <param name="allowFullScreen" value="true" />
+                <param name="menu" value="false" />
+                <param name="wmode" value="window" />
+                <param name="FlashVars" value="&sLang=en&isweb=true" />
+                </object>
+				 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p> </p>
+    </div>
+  </center>
+
+  <script>
+    $(document).ready(function(){
+      // Initialize the carousel with the ID 'carousel1'
+      $('#carousel1 .carousel-inner').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      });
+    });
+  </script>
+
+  <script src="script.js"></script>
+  <script>
+    function openNewWindow(url) {
+      window.open(url, '_blank');
+    }
+
+    function changeWindow(url) {
+      window.location.replace(url);
+    }
+  </script>
+</body>
+</html>
